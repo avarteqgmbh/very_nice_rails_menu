@@ -12,3 +12,8 @@ gem "sqlite3"
 #gemspec
 
 gem 'very_nice_menu', :path => '/Users/jfischer/git/very_nice_menu'
+
+group :test, :development do 
+  gem "rspec", "~> 2.6"
+  gem "rspec-rails", "~> 2.6"
+end

@@ -7,9 +7,9 @@ rescue LoadError
 end
 
 require 'rake'
-require 'rake/rdoctask'
-
+require 'rdoc/task'
 require 'rake/testtask'
+require 'rspec/core/rake_task'
 
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
@@ -26,4 +26,9 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README.rdoc')
   rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+RSpec::Core::RakeTask.new(:spec) do |rspec|
+
+#  rspec.pattern = "test/dummy/spec/*/*_spec.rb"
 end
